@@ -9,7 +9,7 @@ Repositorio del grupo de cuatro para el núcleo transaccional en PostgreSQL. Con
 
 ## Colaboración
 
-1. Sustituyan “Integrante 1–4” por los nombres reales en el reparto.
+1. Juan Sebastian Morales Forero está registrado como Integrante 1; completen los nombres reales de los integrantes 2–4 en el reparto.
 2. Cada integrante registra su aporte con commits descriptivos desde su propia cuenta.
 3. Las evidencias se guardan después de ejecutar los scripts reales en PostgreSQL.
 4. El informe PDF integra los cuatro aportes y sus evidencias.

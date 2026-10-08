@@ -1,0 +1,4 @@
+-- Avance 1 — procedimientos almacenados
+-- Responsable propuesto: Integrante 4
+-- TODO: crear al menos 3 procedimientos: cálculo/transacción, reporte agregado
+-- y mantenimiento/operación. Todos deben manejar excepciones con EXCEPTION y RAISE.

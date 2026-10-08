@@ -1,0 +1,5 @@
+-- Avance 1 — creación de tablas
+-- Responsable propuesto: Integrante 2
+-- TODO: implementar las ocho entidades, PK/FK, restricciones e índices básicos.
+-- Entidades requeridas: Actores_Directores, Contratos, Salas, Funciones,
+-- Tipos_Boleta, Ventas, Espectadores y Staff.

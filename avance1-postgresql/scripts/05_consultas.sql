@@ -1,0 +1,3 @@
+-- Avance 1 — consultas SQL
+-- Responsable propuesto: Integrante 4
+-- TODO: crear al menos 3 consultas de negocio con JOIN, agregaciones o subconsultas.

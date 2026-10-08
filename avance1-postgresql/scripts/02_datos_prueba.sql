@@ -1,0 +1,4 @@
+-- Avance 1 — datos de prueba
+-- Responsable propuesto: Integrante 3
+-- TODO: incluir mínimo 30 registros en actores/directores, espectadores,
+-- ventas y funciones; completar datos coherentes para las demás entidades.

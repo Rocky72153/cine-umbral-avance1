@@ -1,0 +1,4 @@
+-- Avance 1 — triggers
+-- Responsables propuestos: Integrantes 2, 3 y 4
+-- TODO: implementar al menos 6 triggers distribuidos en al menos 6 tablas.
+-- Documentar en el informe la tabla y la regla de negocio de cada trigger.

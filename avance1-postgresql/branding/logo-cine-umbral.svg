@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="190" viewBox="0 0 720 190" role="img" aria-labelledby="title desc">
+  <title id="title">Cine Umbral</title>
+  <desc id="desc">Logotipo: un umbral iluminado en rojo junto al nombre Cine Umbral.</desc>
+  <defs>
+    <linearGradient id="glow" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#b43d36"/>
+      <stop offset="1" stop-color="#e07a52"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="142" height="142" rx="20" fill="#151922"/>
+  <path d="M55 145V88c0-27 18-46 40-46s40 19 40 46v57" fill="none" stroke="#f4efe7" stroke-width="8"/>
+  <path d="M77 145V91c0-14 7-24 18-24s18 10 18 24v54" fill="url(#glow)"/>
+  <path d="M68 145h72" fill="none" stroke="#f4efe7" stroke-width="8" stroke-linecap="square"/>
+  <circle cx="95" cy="31" r="5" fill="#d96549"/>
+  <text x="198" y="70" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="5" fill="#b64a3d">CINE</text>
+  <text x="194" y="132" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" letter-spacing="1" fill="#151922">UMBRAL</text>
+  <path d="M200 151h462" stroke="#ded8d0" stroke-width="2"/>
+  <text x="200" y="174" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2.1" fill="#55545a">CINE PARA CRUZAR OTRAS MIRADAS</text>
+</svg>
