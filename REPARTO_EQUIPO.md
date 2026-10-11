@@ -5,7 +5,7 @@ Cada aporte debe incluir su explicación de regla de negocio y evidencia de ejec
 | Integrante | Parte principal | Entregables y criterio de terminado |
 |---|---|---|
 | Juan Sebastian Morales Forero (Integrante 1) | Identidad y modelado | Validar nombre, enfoque y datos del cine; crear logo; elaborar el ER con las ocho entidades; entregar modelo relacional normalizado a 3FN. |
-| Integrante 2 | Esquema e integridad | Implementar las ocho tablas en `01_creacion_tablas.sql`, PK/FK, restricciones, índices y dos triggers en tablas diferentes; documentar sus reglas. |
+| Jenny Alejandra Gómez López (Integrante 2) | Esquema e integridad | Implementar las ocho tablas en `01_creacion_tablas.sql`, PK/FK, restricciones, índices y dos triggers en tablas diferentes; documentar sus reglas. |
 | Integrante 3 | Datos y triggers | Preparar datos coherentes, con mínimo 30 filas en actores/directores, espectadores, ventas y funciones; agregar dos triggers en tablas distintas y justificar reglas. |
 | Integrante 4 | Operación y consultas | Implementar tres procedimientos con `EXCEPTION` y `RAISE`, tres consultas de negocio y dos triggers en tablas distintas; preparar explicación de propósito y coordinar integración. |
 
