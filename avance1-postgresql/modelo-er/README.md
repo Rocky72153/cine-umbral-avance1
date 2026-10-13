@@ -6,6 +6,6 @@
 - [Editar el diagrama en draw.io](modelo-er.drawio)
 - [Consultar el modelo relacional en 3FN](../modelo-relacional/README.md)
 
-El diagrama presenta las ocho entidades de la guía, sus atributos, claves identificadoras y relaciones con cardinalidades. Los nombres de las relaciones se expresan con verbos en infinitivo: formalizar, programar, realizar, usar, generar y registrar.
+El diagrama presenta las ocho entidades de la guía, sus atributos, claves identificadoras y cardinalidades con notación Chen. Las relaciones se nombran con verbos en infinitivo: formalizar, corresponder, programar, realizar, usar, generar y registrar.
 
-**Alcance del negocio:** Cine Umbral se dedica exclusivamente a la exhibición de películas comerciales. Las entidades `ACTORES_DIRECTORES` y `CONTRATOS` se conservan porque la guía académica exige esas ocho entidades; su presencia en el esquema no implica que el cine produzca películas o contrate elencos para sus funciones.
+**Regla de negocio representada:** un contrato formaliza la participación de un actor o director invitado en una función específica. Cada contrato corresponde a una sola persona y a una sola función; una persona o una función puede aparecer en varios contratos. Esto permite registrar más de un invitado en un cineforo sin convertir el cine en productor de las películas exhibidas.

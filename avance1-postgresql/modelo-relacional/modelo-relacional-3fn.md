@@ -1,6 +1,6 @@
 # Modelo relacional — Cine Umbral
 
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Alcance:** ocho entidades obligatorias del Avance 1.  
 **Motor previsto:** PostgreSQL.
 
@@ -9,7 +9,7 @@
 - **PK:** clave primaria; identifica de forma única cada fila.
 - **FK:** clave foránea; referencia la PK de otra tabla. Se declara en la tabla del lado N.
 - **UNIQUE:** restricción que impide repetir un valor o una combinación de valores.
-- **NULL permitido:** valor opcional. En este modelo, solo `VENTAS.id_staff` puede quedar nulo para las ventas digitales.
+- **NULL permitido:** solo `VENTAS.id_staff` puede quedar nulo para las ventas digitales.
 - **Cardinalidad (pata de gallo):** círculo = opcional; barra = obligatorio; bifurcación = muchos. Las claves foráneas se almacenan en la tabla del lado N.
 - Los nombres se muestran en mayúsculas para facilitar la lectura del modelo; PostgreSQL convierte identificadores sin comillas a minúsculas.
 
@@ -18,15 +18,15 @@
 ### ACTORES_DIRECTORES
 - **PK:** `id_talento BIGINT`.
 - **Atributos:** `nombres VARCHAR(80)`, `apellidos VARCHAR(80)`, `tipo_talento VARCHAR(12)`, `pais_origen VARCHAR(60)`, `fecha_nacimiento DATE`, `correo VARCHAR(254)`.
-- **Regla:** `tipo_talento` admite `ACTOR`, `DIRECTOR` o `AMBOS`.
+- **Regla:** `tipo_talento` admite `ACTOR`, `DIRECTOR` o `AMBOS`. Se registra aquí el talento invitado a actividades especiales.
 
 ### CONTRATOS
 - **PK:** `id_contrato BIGINT`.
-- **FK obligatoria:** `id_talento → ACTORES_DIRECTORES(id_talento)`.
-- **UNIQUE:** `codigo_contrato VARCHAR(30)`.
-- **Atributos:** `nombre_proyecto VARCHAR(160)`, `tipo_contrato VARCHAR(40)`, `fecha_firma DATE`, `fecha_inicio DATE`, `fecha_fin DATE`, `honorarios NUMERIC(12,2)`, `estado VARCHAR(15)`.
-- **Restricciones:** honorarios no negativos; `fecha_fin` puede ser nula o igual/posterior a `fecha_inicio`; `fecha_firma ≤ fecha_inicio`.
-- **Cardinalidad:** un talento puede relacionarse con cero o muchos contratos; cada contrato pertenece a un solo talento.
+- **FK obligatorias:** `id_talento → ACTORES_DIRECTORES(id_talento)` y `id_funcion → FUNCIONES(id_funcion)`.
+- **UNIQUE:** `codigo_contrato VARCHAR(30)` y `(id_talento, id_funcion)`; la segunda restricción admite un único contrato por invitado y función.
+- **Atributos:** `objeto_contrato VARCHAR(180)`, `tipo_contrato VARCHAR(40)`, `fecha_firma DATE`, `honorarios NUMERIC(12,2)`, `estado VARCHAR(15)`.
+- **Restricción:** honorarios no negativos.
+- **Cardinalidades:** cada contrato pertenece a un talento y una función; cada talento y cada función puede tener cero o muchos contratos.
 
 ### SALAS
 - **PK:** `id_sala BIGINT`.
@@ -38,8 +38,8 @@
 - **PK:** `id_funcion BIGINT`.
 - **FK obligatoria:** `id_sala → SALAS(id_sala)`.
 - **UNIQUE compuesta:** `(id_sala, fecha_hora_inicio)`; evita dos funciones con la misma hora de inicio en una sala.
-- **Atributos:** `titulo_obra VARCHAR(160)`, `fecha_hora_inicio TIMESTAMPTZ`, `duracion_minutos SMALLINT`, `idioma VARCHAR(40)`, `clasificacion VARCHAR(20)`, `precio_base NUMERIC(12,2)`, `estado VARCHAR(15)`.
-- **Restricciones:** duración mayor que cero y precio base no negativo. La prevención de traslapes debe comprobar también la duración de las funciones.
+- **Atributos:** `titulo_obra VARCHAR(160)`, `fecha_hora_inicio TIMESTAMPTZ`, `duracion_minutos SMALLINT`, `idioma VARCHAR(40)`, `clasificacion VARCHAR(20)`, `precio_base NUMERIC(12,2)`, `estado VARCHAR(15)`, `tipo_funcion VARCHAR(20)`.
+- **Restricciones:** duración mayor que cero y precio base no negativo. `tipo_funcion` distingue `PROYECCION`, `CINEFORO` y `CONVERSATORIO`. La prevención de traslapes debe comprobar también la duración de las funciones.
 
 ### TIPOS_BOLETA
 - **PK:** `id_tipo_boleta BIGINT`.
@@ -72,6 +72,7 @@
 | Tabla hija | Columna | Tabla referenciada | Cardinalidad |
 |---|---|---|---|
 | CONTRATOS | id_talento | ACTORES_DIRECTORES | 1 talento : 0..N contratos |
+| CONTRATOS | id_funcion | FUNCIONES | 1 función : 0..N contratos |
 | FUNCIONES | id_sala | SALAS | 1 sala : 0..N funciones |
 | VENTAS | id_funcion | FUNCIONES | 1 función : 0..N ventas |
 | VENTAS | id_espectador | ESPECTADORES | 1 espectador : 0..N ventas |
@@ -82,13 +83,15 @@
 
 1. **Primera forma normal (1FN):** cada atributo contiene un valor atómico; no se almacenan listas de asientos, personas o tipos en una columna.
 2. **Segunda forma normal (2FN):** cada tabla tiene una PK simple; las restricciones únicas compuestas son claves candidatas y no originan dependencias parciales.
-3. **Tercera forma normal (3FN):** los datos descriptivos dependen de la clave de su propia tabla. No se duplican nombres del talento en contratos, datos de salas en funciones ni datos de espectadores o tipos de boleta en ventas.
+3. **Tercera forma normal (3FN):** los datos descriptivos dependen de la clave de su propia tabla. Los nombres del talento no se repiten en contratos; el título y la fecha de la función se consultan desde `FUNCIONES`, y la sala desde `SALAS`.
 4. **Historial transaccional:** `VENTAS.precio_pagado` registra el importe cobrado y no copia el precio base ni el factor de la boleta.
 5. **Datos derivados:** la capacidad pertenece a `SALAS`; los totales se calculan en las consultas, no se duplican en otras tablas.
 
-## Decisiones y límites del alcance
+## Decisiones del modelo
 
 - La guía exige exactamente estas ocho entidades y no incluye una tabla `PELICULAS`; por eso `FUNCIONES` conserva `titulo_obra`.
-- Cine Umbral se define como un cine que únicamente exhibe películas comerciales. `ACTORES_DIRECTORES` y `CONTRATOS` se conservan para cumplir el conjunto de entidades obligatorio; esta decisión académica no debe interpretarse como una actividad operativa de producción o contratación de elenco.
-- Cada venta se asocia con un espectador registrado.
+- `FUNCIONES.tipo_funcion` diferencia la proyección regular de las actividades con invitados: cineforo y conversatorio.
+- `CONTRATOS` representa la participación de un actor o director invitado en una función programada; no representa producción de la película. Cada contrato se liga a un talento y una función. Una función puede tener varios invitados, con un contrato por persona.
+- La fecha de la actividad y el título de la obra se mantienen solo en `FUNCIONES`; así no se repiten en `CONTRATOS`.
+- Cada venta se asocia con un espectador registrado y un tipo de boleta.
 - La unicidad de asiento se controla por función con `UNIQUE (id_funcion, asiento)`.

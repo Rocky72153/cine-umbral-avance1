@@ -13,8 +13,8 @@ Las relaciones usan pata de gallo: círculo para opcionalidad, barra para obliga
 ## Decisiones del modelo
 
 - Se conservan exactamente las ocho entidades solicitadas en la guía.
-- Una fila de `VENTAS` representa una boleta y un asiento para una función.
-- `VENTAS.precio_pagado` guarda el importe histórico cobrado.
+- `FUNCIONES.tipo_funcion` distingue proyecciones regulares, cineforos y conversatorios.
+- Cada fila de `CONTRATOS` vincula un talento con una función. La clave única `(id_talento, id_funcion)` evita duplicar la misma participación; una función puede tener varios contratos para sus invitados.
+- `VENTAS` representa una boleta y un asiento para una función; `precio_pagado` conserva el importe histórico cobrado.
 - `VENTAS.id_staff` es opcional para permitir ventas digitales.
-- `FUNCIONES` guarda el título de la obra porque el alcance exigido no incluye una tabla `PELICULAS`.
-- La identidad del negocio se limita a la exhibición de películas comerciales; las entidades de talento y contratos se mantienen por exigencia académica.
+- `FUNCIONES` conserva el título de la obra porque el alcance exigido no incluye una tabla `PELICULAS`.
