@@ -2,9 +2,7 @@
 
 El diagrama presenta las ocho tablas, sus atributos, claves primarias, claves foráneas y restricciones únicas. La documentación complementaria especifica tipos previstos para PostgreSQL, reglas de integridad y la justificación de 3FN.
 
-Las relaciones usan pata de gallo: círculo para opcionalidad, barra para obligatoriedad y bifurcación para muchos. Las claves foráneas están en la tabla del lado N.
-
-![Diagrama del modelo relacional 3FN de Cine Umbral](modelo-relacional-3fn.svg)
+![Diagrama del modelo relacional 3FN de Cine Umbral](modelo-relacional-3fn.svg?v=1345e37ff32b817019d284ccb1261f6e5772e0f1)
 
 - [Abrir el diagrama SVG](modelo-relacional-3fn.svg)
 - [Editar la fuente en draw.io](modelo-relacional-3fn.drawio)
