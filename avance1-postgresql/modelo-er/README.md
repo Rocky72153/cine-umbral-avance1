@@ -1,9 +1,11 @@
 # Modelo entidad–relación · Cine Umbral
 
-![Diagrama entidad–relación de Cine Umbral](modelo-er.svg)
+![Modelo entidad–relación de Cine Umbral](modelo-er.svg)
 
-- [Ver o descargar el diagrama SVG](modelo-er.svg)
-- [Editar la fuente en draw.io](modelo-er.drawio)
+- [Ver el diagrama SVG](modelo-er.svg)
+- [Editar el diagrama en draw.io](modelo-er.drawio)
 - [Consultar el modelo relacional en 3FN](../modelo-relacional/README.md)
 
-El modelo recoge las ocho entidades solicitadas. Las relaciones conceptuales corresponden a las referencias entre tablas definidas en el modelo relacional: actores/directores–contratos, salas–funciones, funciones–ventas, espectadores–ventas, tipos de boleta–ventas y staff–ventas.
+El diagrama presenta las ocho entidades de la guía, sus atributos, claves identificadoras y relaciones con cardinalidades. Los nombres de las relaciones se expresan con verbos en infinitivo: formalizar, programar, realizar, usar, generar y registrar.
+
+**Alcance del negocio:** Cine Umbral se dedica exclusivamente a la exhibición de películas comerciales. Las entidades `ACTORES_DIRECTORES` y `CONTRATOS` se conservan porque la guía académica exige esas ocho entidades; su presencia en el esquema no implica que el cine produzca películas o contrate elencos para sus funciones.
