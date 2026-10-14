@@ -3,32 +3,22 @@
 ## Identidad de la empresa
 
 - **Nombre:** Cine Umbral.
-- **Enfoque de programación:** estrenos de distribución amplia, cine latinoamericano e independiente, y temporadas de repertorio. Algunas funciones incluyen cine-foros o conversatorios con actores y directores invitados.
+- **Enfoque de programación:** estrenos de distribución amplia, cine latinoamericano e independiente, y temporadas de repertorio. Algunas funciones pueden incluir cineforos o conversatorios.
 - **Ciudad:** Bogotá, Colombia.
-- **Modalidad de operación:** exhibición presencial en cuatro salas; venta en taquilla y precompra digital.
+- **Modalidad de operación:** exhibición presencial en cuatro salas, con venta en taquilla y precompra digital.
 - **Capacidad estimada:** 240 espectadores, distribuidos en cuatro salas de 60 puestos.
-- **Actores/directores registrados:** 30 registros iniciales previstos para el conjunto de prueba.
-- **Particularidades del negocio:** la programación distingue proyecciones regulares de actividades especiales. Cuando participa un invitado, su contrato se asocia con esa persona y con la función concreta; una función puede tener varios invitados.
+- **Actores/directores registrados:** 30 registros iniciales previstos para los datos de prueba.
+- **Particularidades del negocio:** cada función programa una película en una sala. Actores y directores se vinculan con las películas en una relación muchos a muchos. Los contratos representan la relación laboral entre el cine y su staff. Una venta corresponde a un espectador y a una función, y puede contener varias boletas, una por asiento. La venta digital puede no tener un empleado asociado.
 - **Logo:** [logotipo SVG](branding/logo-cine-umbral.svg) · [identidad visual](branding/README.md).
+
+## Alcance del modelo
+
+Se parte de las ocho entidades solicitadas y se amplía el modelo con **Pelicula** y **Boleta** para representar la programación y los asientos vendidos. **Tipo_Boleta** se conserva como catálogo independiente en el modelo relacional normalizado. También se incluyen catálogos y una tabla asociativa que permiten mantener los datos descriptivos y la relación muchos a muchos sin duplicarlos.
 
 ## Estructura del avance
 
-```text
-avance1-postgresql/
-├── branding/
-├── modelo-er/
-├── modelo-relacional/
-├── scripts/
-│   ├── 01_creacion_tablas.sql
-│   ├── 02_datos_prueba.sql
-│   ├── 03_triggers.sql
-│   ├── 04_procedimientos.sql
-│   └── 05_consultas.sql
-└── evidencias/
-```
-
 - `branding/`: identidad visual y logotipo vectorial.
-- `modelo-er/`: diagrama entidad–relación en SVG y fuente editable de draw.io.
-- `modelo-relacional/`: modelo en 3FN en SVG y fuente editable de draw.io, con documentación de claves y restricciones.
-- `scripts/`: archivos SQL del proyecto; su implementación corresponde a los integrantes asignados.
-- `evidencias/`: destinada a capturas de la ejecución real en PostgreSQL.
+- `modelo-er/`: diagrama entidad–relación.
+- `modelo-relacional/`: modelo relacional en 3FN y documentación de claves y reglas.
+- `scripts/`: scripts SQL del avance (01 a 05).
+- `evidencias/`: capturas de la ejecución real de los scripts.

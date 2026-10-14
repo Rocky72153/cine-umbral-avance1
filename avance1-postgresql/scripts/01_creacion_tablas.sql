@@ -1,5 +1,7 @@
 -- Avance 1 — creación de tablas
 -- Responsable propuesto: Integrante 2
--- TODO: implementar las ocho entidades, PK/FK, restricciones e índices básicos.
--- Entidades requeridas: Actores_Directores, Contratos, Salas, Funciones,
--- Tipos_Boleta, Ventas, Espectadores y Staff.
+-- TODO: implementar las ocho entidades base, más Pelicula y Boleta, los ocho
+-- catálogos complementarios y la tabla asociativa Actor_Director_Pelicula.
+-- El modelo relacional documentado comprende 19 tablas en total.
+-- Entidades base: Actor_Director, Contrato, Sala, Funcion, Tipo_Boleta,
+-- Venta, Espectador y Staff.

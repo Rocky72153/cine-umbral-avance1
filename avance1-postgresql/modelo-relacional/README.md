@@ -1,18 +1,19 @@
 # Modelo relacional en tercera forma normal · Cine Umbral
 
-El diagrama presenta las ocho tablas, sus atributos, claves primarias, claves foráneas y restricciones únicas. La documentación complementaria especifica tipos previstos para PostgreSQL, reglas de integridad y la justificación de 3FN.
+![Diagrama del modelo relacional 3FN de Cine Umbral](modelo-relacional.drawio.png)
 
-![Diagrama del modelo relacional 3FN de Cine Umbral](modelo-relacional-3fn.svg?v=1345e37ff32b817019d284ccb1261f6e5772e0f1)
+- [Abrir o descargar el diagrama](modelo-relacional.drawio.png)
+- [Consultar las relaciones, claves y justificación de 3FN](modelo-relacional-3fn.md)
+- [Ver el modelo entidad–relación](../modelo-er/README.md)
 
-- [Abrir el diagrama SVG](modelo-relacional-3fn.svg)
-- [Editar la fuente en draw.io](modelo-relacional-3fn.drawio)
-- [Consultar relaciones, restricciones y justificación 3FN](modelo-relacional-3fn.md)
+## Decisiones de modelado
 
-## Decisiones del modelo
+La propuesta conserva las ocho entidades base y añade **Pelicula** y **Boleta**: Pelicula permite programar las funciones, y Boleta registra individualmente cada asiento vendido. **Tipo_Boleta** es un catálogo separado que referencia las boletas.
 
-- Se conservan exactamente las ocho entidades solicitadas en la guía.
-- `FUNCIONES.tipo_funcion` distingue proyecciones regulares, cineforos y conversatorios.
-- Cada fila de `CONTRATOS` vincula un talento con una función. La clave única `(id_talento, id_funcion)` evita duplicar la misma participación; una función puede tener varios contratos para sus invitados.
-- `VENTAS` representa una boleta y un asiento para una función; `precio_pagado` conserva el importe histórico cobrado.
-- `VENTAS.id_staff` es opcional para permitir ventas digitales.
-- `FUNCIONES` conserva el título de la obra porque el alcance exigido no incluye una tabla `PELICULAS`.
+La venta funciona como encabezado de la operación: referencia un espectador, una función, el método de pago y, cuando aplica, el empleado que la registra. El detalle de boletas permite vender varios asientos en una venta. El precio se guarda por boleta; el total de la venta se calcula sumando esos precios y no se duplica en una columna.
+
+Los contratos corresponden al vínculo laboral del staff. Actores y directores se relacionan con películas mediante la tabla asociativa Actor_Director_Pelicula.
+
+## Organización del modelo
+
+El diagrama muestra **19 tablas**: las ocho entidades base, Pelicula y Boleta, ocho catálogos complementarios y la tabla asociativa Actor_Director_Pelicula. Tipo_Boleta cuenta entre las ocho entidades base y se representa como catálogo en el modelo normalizado. La documentación complementaria enumera sus claves foráneas, cardinalidades y reglas de integridad.
