@@ -5,3 +5,4 @@
 -- El modelo relacional documentado comprende 19 tablas en total.
 -- Entidades base: Actor_Director, Contrato, Sala, Funcion, Tipo_Boleta,
 -- Venta, Espectador y Staff.
+-- id_staff en Venta es obligatorio: todas las ventas las registra el staff.

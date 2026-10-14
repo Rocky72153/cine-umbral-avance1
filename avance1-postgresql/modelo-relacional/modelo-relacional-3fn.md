@@ -1,4 +1,4 @@
-# Modelo relacional — Cine Umbral
+# Modelo relacional — CinePlus Bogotá
 
 **Motor previsto:** PostgreSQL.  
 **Alcance:** ocho entidades base, las ampliaciones Pelicula y Boleta, catálogos normalizados y una tabla asociativa.
@@ -8,7 +8,7 @@
 - **PK:** clave primaria.
 - **FK:** clave foránea almacenada en la tabla del lado muchos.
 - **UNIQUE:** valor o combinación de valores que no se debe repetir.
-- **Opcionalidad:** Venta.id_staff admite nulo para compras digitales.
+- **Obligatoriedad:** toda Venta debe tener un id_staff; cada operación de boletería la registra un empleado.
 - Los nombres de tablas se escriben en singular en este modelo.
 
 ## Entidades base y ampliaciones
@@ -49,9 +49,9 @@
 ### Venta
 
 - **PK:** id_venta.
-- **FK:** id_staff → Staff (opcional); id_funcion → Funcion; id_espectador → Espectador; id_metodo_pago → Metodo_Pago_Venta.
+- **FK:** id_staff → Staff (obligatoria); id_funcion → Funcion; id_espectador → Espectador; id_metodo_pago → Metodo_Pago_Venta.
 - **Atributo:** fecha.
-- **Regla:** una venta pertenece a un espectador y a una función. id_staff queda nulo cuando la compra es digital. El encabezado no almacena un total derivable de sus boletas.
+- **Regla:** una venta pertenece a un espectador y a una función. id_staff es obligatorio; CinePlus no admite ventas sin registro por parte del staff. El encabezado no almacena un total derivable de sus boletas.
 
 ### Espectador
 
@@ -102,7 +102,7 @@ Tipo_Boleta es una de las ocho entidades base y se mantiene como catálogo con c
 |---|---|
 | Staff — Contrato | Un staff puede tener varios contratos; cada contrato corresponde a un staff. |
 | Tipo_Contrato — Contrato | Un tipo puede clasificar varios contratos; cada contrato tiene un tipo. |
-| Staff — Venta | Un staff puede registrar varias ventas; cada venta tiene cero o un staff. |
+| Staff — Venta | Un staff puede registrar varias ventas; cada venta tiene un staff. |
 | Espectador — Venta | Un espectador puede realizar varias ventas; cada venta corresponde a un espectador. |
 | Funcion — Venta | Una función puede aparecer en varias ventas; cada venta corresponde a una función. |
 | Venta — Boleta | Una venta contiene una o varias boletas; cada boleta pertenece a una venta. |
@@ -113,6 +113,12 @@ Tipo_Boleta es una de las ocho entidades base y se mantiene como catálogo con c
 
 Los catálogos restantes tienen una relación uno a muchos con su tabla de uso: Cargo_Staff con Staff, Estado_Staff con Staff, Tipo_Documento con Staff y Espectador, Metodo_Pago_Venta con Venta, Clasificacion_Pelicula con Pelicula, y Tipo_Sala y Estado_Sala con Sala.
 
+## Parámetros de operación
+
+- CinePlus Bogotá opera una sede con 20 salas y 100 puestos por sala, para una capacidad de 2.000 personas. La carga de datos debe reflejar estas cantidades.
+- Tipo_Sala identifica la modalidad disponible en cada sala (digital, 3D o 4D), de acuerdo con el inventario del cine.
+- El conjunto de prueba registra 30 actores/directores.
+
 ## Reglas de integridad del negocio
 
 - No se repite el número de documento para el mismo tipo de documento en Staff ni en Espectador.
@@ -120,6 +126,8 @@ Los catálogos restantes tienen una relación uno a muchos con su tabla de uso: 
 - El precio de una boleta, el salario y la capacidad no pueden ser negativos; la capacidad debe ser mayor que cero.
 - Las funciones de una sala no deben traslaparse.
 - Las claves foráneas impiden registrar ventas, contratos, funciones o boletas con referencias inexistentes.
+
+El enfoque de programación del sistema se establece como Programación Orientada a Objetos (POO); es un criterio de desarrollo de software y no altera las entidades ni las relaciones del modelo de datos.
 
 ## Justificación de tercera forma normal
 

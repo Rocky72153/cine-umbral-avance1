@@ -1,18 +1,18 @@
-# Identidad de Cine Umbral
+# Identidad de CinePlus Bogotá
 
-![Logotipo de Cine Umbral](logo-cine-umbral.svg)
+![Logotipo de CinePlus Bogotá](logo-cineplus-bogota.svg)
 
-- **Nombre:** Cine Umbral.
-- **Enfoque de programación:** estrenos de distribución amplia, cine latinoamericano e independiente, y temporadas de repertorio. Algunas funciones incluyen cine-foros o conversatorios con actores y directores invitados.
+- **Nombre:** CinePlus Bogotá.
+- **Enfoque de programación del sistema:** Programación Orientada a Objetos (POO).
 - **Ciudad:** Bogotá, Colombia.
-- **Modalidad de operación:** exhibición presencial en cuatro salas; venta en taquilla y precompra digital.
-- **Capacidad estimada:** 240 espectadores, distribuidos en cuatro salas de 60 puestos.
-- **Actores/directores registrados:** 30 registros iniciales previstos para el conjunto de prueba.
-- **Particularidades:** las funciones se clasifican como proyección regular, cineforo o conversatorio. Los contratos documentan la participación de cada invitado en una función programada concreta.
+- **Modalidad de operación:** una sede con proyección digital y formatos 3D y 4D; las ventas de boletería las registra exclusivamente el staff.
+- **Capacidad estimada:** 2.000 espectadores en 20 salas de 100 puestos.
+- **Actores/directores registrados:** 30.
+- **Particularidades:** CinePlus Bogotá cuenta con 50 años de trayectoria. Ofrece múltiples funciones para las películas en cartelera y todas las ventas requieren un responsable de staff.
 
 ## Criterio visual
 
-El marco oscuro representa la sala; el arco abierto funciona como umbral hacia la experiencia cinematográfica. La luz roja al centro alude a la pantalla y sirve como acento reconocible. La tipografía serif del nombre aporta carácter, mientras la línea secundaria conserva legibilidad en usos digitales.
+El marco representa la pantalla y el arco central sugiere la sala y la experiencia de proyección. La tipografía distingue el nombre comercial y la línea inferior identifica la sede en Bogotá, Colombia.
 
 **Paleta:** tinta `#151922`, rojo pantalla `#B64A3D`, marfil `#F4EFE7` y gris cálido `#55545A`.
 

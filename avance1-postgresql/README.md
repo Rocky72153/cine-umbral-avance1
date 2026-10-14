@@ -1,15 +1,15 @@
-# Avance 1 — Cine Umbral
+# Avance 1 — CinePlus Bogotá
 
 ## Identidad de la empresa
 
-- **Nombre:** Cine Umbral.
-- **Enfoque de programación:** estrenos de distribución amplia, cine latinoamericano e independiente, y temporadas de repertorio. Algunas funciones pueden incluir cineforos o conversatorios.
+- **Nombre:** CinePlus Bogotá.
+- **Enfoque de programación del sistema:** Programación Orientada a Objetos (POO).
 - **Ciudad:** Bogotá, Colombia.
-- **Modalidad de operación:** exhibición presencial en cuatro salas, con venta en taquilla y precompra digital.
-- **Capacidad estimada:** 240 espectadores, distribuidos en cuatro salas de 60 puestos.
-- **Actores/directores registrados:** 30 registros iniciales previstos para los datos de prueba.
-- **Particularidades del negocio:** cada función programa una película en una sala. Actores y directores se vinculan con las películas en una relación muchos a muchos. Los contratos representan la relación laboral entre el cine y su staff. Una venta corresponde a un espectador y a una función, y puede contener varias boletas, una por asiento. La venta digital puede no tener un empleado asociado.
-- **Logo:** [logotipo SVG](branding/logo-cine-umbral.svg) · [identidad visual](branding/README.md).
+- **Modalidad de operación:** una sede con proyección digital y formatos 3D y 4D; las ventas de boletería son registradas exclusivamente por el staff.
+- **Capacidad estimada:** 2.000 espectadores en 20 salas de 100 puestos cada una.
+- **Actores/directores registrados:** 30.
+- **Particularidades del negocio:** CinePlus Bogotá fue fundada en Bogotá, Colombia, y cuenta con 50 años de trayectoria. Opera una única sede con 20 salas, cada una con capacidad para 100 personas. Ofrece proyección digital, 3D y 4D, y programa múltiples funciones para las películas en cartelera. Cada venta corresponde a un espectador y una función, contiene una o varias boletas individuales y debe ser registrada por un integrante del staff.
+- **Logo:** [logotipo SVG](branding/logo-cineplus-bogota.svg) · [identidad visual](branding/README.md).
 
 ## Alcance del modelo
 

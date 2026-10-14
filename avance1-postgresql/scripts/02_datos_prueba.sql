@@ -1,4 +1,7 @@
 -- Avance 1 — datos de prueba
 -- Responsable propuesto: Integrante 3
--- TODO: incluir mínimo 30 registros en actores/directores, espectadores,
--- ventas y funciones; completar datos coherentes para las demás entidades.
+-- TODO: incluir mínimo 30 registros en Actor_Director, Espectador, Venta y
+-- Funcion; completar datos coherentes para las demás entidades.
+-- CinePlus Bogotá: una sede, 20 salas con capacidad de 100 cada una (2.000
+-- puestos en total), modalidades digital/3D/4D y 30 actores/directores.
+-- Toda Venta debe referenciar un id_staff; no existen ventas sin staff responsable.
