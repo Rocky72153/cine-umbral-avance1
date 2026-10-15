@@ -10,7 +10,7 @@
 
 La propuesta conserva las ocho entidades base y añade **Pelicula** y **Boleta**: Pelicula permite programar las funciones, y Boleta registra individualmente cada asiento vendido. **Tipo_Boleta** es un catálogo separado que referencia las boletas.
 
-La venta funciona como encabezado de la operación: referencia un espectador, una función, el método de pago y el empleado responsable de registrarla, siempre obligatorio. El detalle de boletas permite vender varios asientos en una venta. El precio se guarda por boleta; el total de la venta se calcula sumando esos precios y no se duplica en una columna.
+La venta funciona como encabezado de la operación: referencia un espectador, una función, el método de pago y el empleado responsable de registrarla, siempre obligatorio. El detalle de boletas permite vender varios asientos en una venta. Cada boleta conserva el precio aplicado. El esquema SQL actual también guarda Venta.monto_total, calculado por el procedimiento de registro como suma de los precios redondeados de sus boletas.
 
 Los contratos corresponden al vínculo laboral del staff. Actores y directores se relacionan con películas mediante la tabla asociativa Actor_Director_Pelicula.
 

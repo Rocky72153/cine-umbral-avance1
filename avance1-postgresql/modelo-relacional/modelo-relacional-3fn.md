@@ -50,8 +50,8 @@
 
 - **PK:** id_venta.
 - **FK:** id_staff → Staff (obligatoria); id_funcion → Funcion; id_espectador → Espectador; id_metodo_pago → Metodo_Pago_Venta.
-- **Atributo:** fecha.
-- **Regla:** una venta pertenece a un espectador y a una función. id_staff es obligatorio; CinePlus no admite ventas sin registro por parte del staff. El encabezado no almacena un total derivable de sus boletas.
+- **Atributos:** fecha TIMESTAMP, monto_total DECIMAL(10,2).
+- **Regla:** una venta pertenece a un espectador y a una función. id_staff es obligatorio; CinePlus no admite ventas sin registro por parte del staff. El procedimiento calcula monto_total sumando los precios redondeados de las boletas y lo guarda junto con el encabezado. Cualquier operación posterior que modifique boletas debe mantener sincronizado ese resumen.
 
 ### Espectador
 
@@ -134,5 +134,5 @@ El enfoque de programación del sistema se establece como Programación Orientad
 1. **Primera forma normal (1FN):** los nombres se separan en campos atómicos y cada fila de Boleta contiene un solo asiento.
 2. **Segunda forma normal (2FN):** las tablas con clave simple dependen de su clave completa. En la tabla asociativa, la clave es la pareja de identificadores y no se almacenan atributos que dependan solo de uno de ellos.
 3. **Tercera forma normal (3FN):** los datos descriptivos se mantienen en sus catálogos. Staff y Espectador guardan la FK del tipo de documento, no el nombre del tipo. Los cargos, estados, métodos de pago, clasificaciones y tipos se consultan desde sus tablas.
-4. **Datos derivados:** el total de una venta se obtiene con la suma de los precios de sus boletas; no se almacena de nuevo en Venta.
+4. **Resumen transaccional:** el esquema actual persiste Venta.monto_total. El procedimiento lo calcula a partir de los precios de Boleta en la misma llamada; las operaciones posteriores sobre el detalle deben mantener el valor sincronizado.
 5. **Historial:** el precio aplicado se conserva en Boleta para mantener el valor cobrado aunque cambie la definición o tarifa del tipo de boleta.
