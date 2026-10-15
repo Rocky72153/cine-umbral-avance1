@@ -4,7 +4,7 @@ RETURNS TRIGGER
 LANGUAGE plpgsql 
 AS $$ 
 BEGIN
-  IF NEW.hora_fin >= NEW.hora_inicio THEN
+  IF NEW.hora_fin <= NEW.hora_inicio THEN
     RAISE EXCEPTION 'La hora de finalización debe ser posterior a la hora de inicio de la función';
   END IF;
 
@@ -71,6 +71,7 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER valida_capacidad_sala_trigger
 BEFORE INSERT OR UPDATE OF capacidad
 ON sala 
+FOR EACH ROW
 EXECUTE FUNCTION validar_capacidad_sala();
 
 -- Función que valida el salario y las fechas de un contrato
