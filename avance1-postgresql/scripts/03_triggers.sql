@@ -97,3 +97,54 @@ ON Contrato
 FOR EACH ROW
 EXECUTE FUNCTION validar_contrato();
 
+-- Trigger que controla el estado del staff
+CREATE OR REPLACE FUNCTION controlEstadoStaff_trigger_fn()
+RETURNS trigger AS $$
+DECLARE
+  v_estado_nuevo VARCHAR(50);
+  v_cantidad_contratos INT;
+BEGIN
+  SELECT nombre
+  INTO v_estado_nuevo
+  FROM Estado_Staff
+  WHERE id_estado_staff = NEW.id_estado_staff;
+
+  IF v_estado_nuevo = 'Activo' THEN
+    SELECT COUNT(*)
+    INTO v_cantidad_contratos
+    FROM Contrato
+    WHERE id_staff = NEW.id_staff;
+
+    IF v_cantidad_contratos = 0 THEN
+      RAISE EXCEPTION 'El empleado % % no puede quedar Activo porque no tiene un contrato registrado', NEW.primer_nombre, NEW.primer_apellido;
+    END IF;
+  END IF;
+
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER controlEstadoStaff_trigger
+  BEFORE UPDATE OF id_estado_staff ON Staff
+  FOR EACH ROW
+  EXECUTE FUNCTION controlEstadoStaff_trigger_fn();
+
+
+-- Trigger Validacion del correo del espectador
+CREATE OR REPLACE FUNCTION validarCorreoEspectador_trigger_fn()
+RETURNS trigger AS $$
+BEGIN
+  IF NEW.correo IS NOT NULL AND NEW.correo !~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$' THEN
+    RAISE EXCEPTION 'El correo % del espectador % % no tiene un formato válido', NEW.correo, NEW.primer_nombre, NEW.primer_apellido;
+  END IF;
+
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER validarCorreoEspectador_trigger
+  BEFORE INSERT OR UPDATE OF correo ON Espectador
+  FOR EACH ROW
+  EXECUTE FUNCTION validarCorreoEspectador_trigger_fn();
