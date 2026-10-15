@@ -1,6 +1,6 @@
-# Modelo relacional en tercera forma normal · CinePlus Bogotá
+# Modelo relacional en tercera forma normal · Cine Bogotá
 
-![Diagrama del modelo relacional 3FN de CinePlus Bogotá](modelo-relacional.drawio.png)
+![Diagrama del modelo relacional 3FN de Cine Bogotá](modelo-relacional.drawio.png)
 
 - [Abrir o descargar el diagrama](modelo-relacional.drawio.png)
 - [Consultar las relaciones, claves y justificación de 3FN](modelo-relacional-3fn.md)
