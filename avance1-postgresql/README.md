@@ -17,7 +17,6 @@ Se parte de las ocho entidades solicitadas y se amplía el modelo con **Pelicula
 
 ## Estructura del avance
 
-- `branding/`: identidad visual y logotipo vectorial.
 - `modelo-er/`: diagrama entidad–relación.
 - `modelo-relacional/`: modelo relacional en 3FN y documentación de claves y reglas.
 - `scripts/`: scripts SQL del avance (01 a 05).
