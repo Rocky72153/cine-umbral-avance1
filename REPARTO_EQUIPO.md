@@ -9,7 +9,7 @@
 
 | Integrante / cuenta de GitHub | Aportes comprobables en el historial | Archivos o entregables relacionados |
 |---|---|---|
-| **Juan Sebastian Morales Forero** (`Rocky72153`) | Definición y documentación de la identidad del cine y reglas de operación; ajustes a la documentación del modelo ER y del modelo relacional; implementación de los procedimientos almacenados para registrar ventas, generar reportes y actualizar el estado de salas; actualización posterior de la identidad a **Cine Bogotá**. | `avance1-postgresql/README.md`, `branding/`, `modelo-er/README.md`, `modelo-relacional/`, `scripts/04_procedimientos.sql`; commits de modelado y procedimientos. |
+| **Juan Sebastian Morales Forero** (`Rocky72153`) | Documentación de las reglas de operación; ajustes a la documentación del modelo ER y del modelo relacional; implementación de los procedimientos almacenados para registrar ventas, generar reportes y actualizar el estado de salas. | `avance1-postgresql/README.md`, `modelo-er/README.md`, `modelo-relacional/`, `scripts/04_procedimientos.sql`; commits de modelado y procedimientos. |
 | **Jenny Alejandra Gómez López** (`AlejandraGomezL`) | Implementación y corrección de triggers para horarios de funciones y capacidad de salas; triggers de control de estado del staff y validación del correo del espectador; creación de las tres consultas de negocio y commits de evidencias de consultas y de dos triggers. | `avance1-postgresql/scripts/03_triggers.sql`, `avance1-postgresql/scripts/05_consultas.sql`, `avance1-postgresql/evidencias/`. |
 | **Camila Castro Alfonso** (`milacastroa`) | Preparación de los datos de prueba; incorporación de triggers de validación en varias tablas; actualización del documento de reparto. | `avance1-postgresql/scripts/02_datos_prueba.sql`, `avance1-postgresql/scripts/03_triggers.sql`, `REPARTO_EQUIPO.md`. |
 | **Integrante con cuenta `RAC0ONN`** (nombre completo por confirmar) | Creación del esquema de tablas y aportes al modelo entidad–relación y al modelo relacional, incluyendo archivos de diagramas y documentación asociada. | `avance1-postgresql/scripts/01_creacion_tablas.sql`, `avance1-postgresql/modelo-er/`, `avance1-postgresql/modelo-relacional/`. |
@@ -19,7 +19,7 @@
 Los siguientes commits ilustran los aportes anteriores. La lista es representativa, no un inventario exhaustivo.
 
 - **Juan Sebastian Morales Forero (`Rocky72153`)**
-  - [Modelado e identidad del proyecto](https://github.com/Rocky72153/cine-umbral-avance1/commit/1c1641485eccf3d12eb2e5e45f107abe45cc16b8).
+  - [Modelado del proyecto](https://github.com/Rocky72153/cine-umbral-avance1/commit/1c1641485eccf3d12eb2e5e45f107abe45cc16b8).
   - [Procedimientos de ventas, reportes y salas](https://github.com/Rocky72153/cine-umbral-avance1/commit/93ea486e778db1b6437e2275952cdf90a944979b).
 - **Jenny Alejandra Gómez López (`AlejandraGomezL`)**
   - [Corrección de triggers de función y sala](https://github.com/Rocky72153/cine-umbral-avance1/commit/0045402dbd79ff80c18ac4776c503b7e11677a18).
@@ -38,7 +38,7 @@ Los siguientes commits ilustran los aportes anteriores. La lista es representati
 
 Esta sección diferencia el trabajo ya observado de las tareas que todavía deben confirmarse o completarse. No debe interpretarse como prueba de que una tarea pendiente ya se ejecutó.
 
-- **Juan Sebastian Morales Forero:** coordinar la integración, mantener consistente el nombre **Cine Bogotá** en documentación y recursos visuales, y revisar los procedimientos y el informe final.
+- **Juan Sebastian Morales Forero:** coordinar la integración, mantener consistente el nombre del proyecto en la documentación, y revisar los procedimientos y el informe final.
 - **Jenny Alejandra Gómez López:** comprobar los triggers y las consultas en PostgreSQL, guardar evidencias reproducibles y documentar las reglas de negocio.
 - **Camila Castro Alfonso:** verificar las cantidades y coherencia de los datos de prueba, probar los triggers aportados y documentar los resultados.
 - **Amelia Camila Merchan Albarracin (`RAC0ONN`):** revisar las tablas y diagramas, y verificar que el modelo y el SQL coincidan.
@@ -50,5 +50,4 @@ Esta sección diferencia el trabajo ya observado de las tareas que todavía debe
 - [ ] Ejecutar los cinco scripts en PostgreSQL y guardar capturas reales de los resultados.
 - [ ] Incluir en el PDF la portada con **Cine Bogotá**, los cuatro nombres completos, la fecha y el tamaño del grupo.
 - [ ] Explicar cada trigger, procedimiento y consulta con su regla o propósito de negocio.
-- [ ] Revisar que las imágenes de los diagramas también muestren el nombre **Cine Bogotá**.
 - [ ] Incorporar el PDF final al repositorio o confirmar el mecanismo de entrega indicado por el curso.
