@@ -1,6 +1,6 @@
-# Modelo entidad–relación · CinePlus Bogotá
+# Modelo entidad–relación · Cine Bogotá
 
-![Diagrama entidad-relación de CinePlus Bogotá](proyecto_cine-modelo-entidad-relacion.drawio.png)
+![Diagrama entidad-relación de Cine Bogotá](proyecto_cine-modelo-entidad-relacion.drawio.png)
 
 - [Abrir o descargar el diagrama](proyecto_cine-modelo-entidad-relacion.drawio.png)
 - [Consultar el modelo relacional en 3FN](../modelo-relacional/README.md)
@@ -9,7 +9,7 @@
 
 El modelo conserva las entidades de operación solicitadas y añade **Pelicula** y **Boleta**. Pelicula permite asociar cada función con la obra que se proyecta. Boleta representa el asiento individual vendido; una venta puede contener varias boletas.
 
-Actores y directores se relacionan con películas en una relación muchos a muchos. El atributo de rol diferencia su participación. Contrato representa un vínculo laboral de un integrante del staff con CinePlus Bogotá y se clasifica por tipo de contrato; no representa un contrato de producción cinematográfica.
+Actores y directores se relacionan con películas en una relación muchos a muchos. El atributo de rol diferencia su participación. Contrato representa un vínculo laboral de un integrante del staff con Cine Bogotá y se clasifica por tipo de contrato; no representa un contrato de producción cinematográfica.
 
 Una función presenta una película en una sala. Una venta se asocia con un espectador y una función, y debe ser registrada por un integrante del staff. No se admiten ventas sin responsable de caja. Cada boleta guarda el tipo y el precio aplicado.
 
