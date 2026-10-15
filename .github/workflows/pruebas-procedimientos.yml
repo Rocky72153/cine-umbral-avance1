@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'avance1-postgresql/scripts/**'
+      - 'avance1-postgresql/evidencias/pruebas_procedimientos.sql'
       - '.github/workflows/pruebas-procedimientos.yml'
   workflow_dispatch:
 
