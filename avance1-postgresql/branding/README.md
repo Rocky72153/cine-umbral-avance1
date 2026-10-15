@@ -1,14 +1,14 @@
-# Identidad de CinePlus Bogotá
+# Identidad de Cine Bogotá
 
-![Logotipo de CinePlus Bogotá](logo-cineplus-bogota.svg)
+![Logotipo de Cine Bogotá](logo-cine-bogota.svg)
 
-- **Nombre:** CinePlus Bogotá.
+- **Nombre:** Cine Bogotá.
 - **Enfoque de programación del sistema:** Programación Orientada a Objetos (POO).
 - **Ciudad:** Bogotá, Colombia.
 - **Modalidad de operación:** una sede con proyección digital y formatos 3D y 4D; las ventas de boletería las registra exclusivamente el staff.
 - **Capacidad estimada:** 2.000 espectadores en 20 salas de 100 puestos.
 - **Actores/directores registrados:** 30.
-- **Particularidades:** CinePlus Bogotá cuenta con 50 años de trayectoria. Ofrece múltiples funciones para las películas en cartelera y todas las ventas requieren un responsable de staff.
+- **Particularidades:** Cine Bogotá cuenta con 50 años de trayectoria. Ofrece múltiples funciones para las películas en cartelera y todas las ventas requieren un responsable de staff.
 
 ## Criterio visual
 
