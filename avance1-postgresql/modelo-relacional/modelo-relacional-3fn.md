@@ -1,4 +1,4 @@
-# Modelo relacional — CinePlus Bogotá
+# Modelo relacional — Cine Bogotá
 
 **Motor previsto:** PostgreSQL.  
 **Alcance:** ocho entidades base, las ampliaciones Pelicula y Boleta, catálogos normalizados y una tabla asociativa.
@@ -51,7 +51,7 @@
 - **PK:** id_venta.
 - **FK:** id_staff → Staff (obligatoria); id_funcion → Funcion; id_espectador → Espectador; id_metodo_pago → Metodo_Pago_Venta.
 - **Atributos:** fecha TIMESTAMP, monto_total DECIMAL(10,2).
-- **Regla:** una venta pertenece a un espectador y a una función. id_staff es obligatorio; CinePlus no admite ventas sin registro por parte del staff. El procedimiento calcula monto_total sumando los precios redondeados de las boletas y lo guarda junto con el encabezado. Cualquier operación posterior que modifique boletas debe mantener sincronizado ese resumen.
+- **Regla:** una venta pertenece a un espectador y a una función. id_staff es obligatorio; Cine no admite ventas sin registro por parte del staff. El procedimiento calcula monto_total sumando los precios redondeados de las boletas y lo guarda junto con el encabezado. Cualquier operación posterior que modifique boletas debe mantener sincronizado ese resumen.
 
 ### Espectador
 
@@ -115,7 +115,7 @@ Los catálogos restantes tienen una relación uno a muchos con su tabla de uso: 
 
 ## Parámetros de operación
 
-- CinePlus Bogotá opera una sede con 20 salas y 100 puestos por sala, para una capacidad de 2.000 personas. La carga de datos debe reflejar estas cantidades.
+- Cine Bogotá opera una sede con 20 salas y 100 puestos por sala, para una capacidad de 2.000 personas. La carga de datos debe reflejar estas cantidades.
 - Tipo_Sala identifica la modalidad disponible en cada sala (digital, 3D o 4D), de acuerdo con el inventario del cine.
 - El conjunto de prueba registra 30 actores/directores.
 
