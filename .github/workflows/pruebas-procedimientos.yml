@@ -1,0 +1,49 @@
+name: Pruebas de procedimientos PostgreSQL
+
+on:
+  push:
+    paths:
+      - 'avance1-postgresql/scripts/**'
+      - '.github/workflows/pruebas-procedimientos.yml'
+  workflow_dispatch:
+
+jobs:
+  probar-procedimientos:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: cine_bogota
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cine_bogota"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Crear tablas
+        env:
+          PGPASSWORD: postgres
+        run: psql -h localhost -U postgres -d cine_bogota -v ON_ERROR_STOP=1 -f avance1-postgresql/scripts/01_creacion_tablas.sql
+      - name: Insertar datos de prueba
+        env:
+          PGPASSWORD: postgres
+        run: psql -h localhost -U postgres -d cine_bogota -v ON_ERROR_STOP=1 -f avance1-postgresql/scripts/02_datos_prueba.sql
+      - name: Crear triggers
+        env:
+          PGPASSWORD: postgres
+        run: psql -h localhost -U postgres -d cine_bogota -v ON_ERROR_STOP=1 -f avance1-postgresql/scripts/03_triggers.sql
+      - name: Crear procedimientos
+        env:
+          PGPASSWORD: postgres
+        run: psql -h localhost -U postgres -d cine_bogota -v ON_ERROR_STOP=1 -f avance1-postgresql/scripts/04_procedimientos.sql
+      - name: Ejecutar los tres procedimientos y mostrar resultados
+        env:
+          PGPASSWORD: postgres
+        run: psql -h localhost -U postgres -d cine_bogota -v ON_ERROR_STOP=1 -f avance1-postgresql/evidencias/pruebas_procedimientos.sql
