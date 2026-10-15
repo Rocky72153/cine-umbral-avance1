@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="646" viewBox="0 0 1400 646">
+<rect width="1400" height="646" rx="18" fill="#10151d"/>
+<path d="M18 0 H1382 Q1400 0 1400 18 V58 H0 V18 Q0 0 18 0" fill="#252d39"/>
+<circle cx="30" cy="29" r="7" fill="#ff6259"/><circle cx="54" cy="29" r="7" fill="#ffc04d"/><circle cx="78" cy="29" r="7" fill="#35c96b"/>
+<text x="105" y="36" font-family="Arial,sans-serif" font-size="19" fill="#e7edf5">PostgreSQL · GitHub Actions · ejecución real</text>
+<text x="28" y="91" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#8ecbff">Evidencia 2 · sp_reporte_ventas_por_funcion</text>
+<text x="32" y="132" font-family="monospace" font-size="20" fill="#e6edf3">$ psql -d cine_bogota -f evidencias/pruebas_procedimientos.sql</text>
+<text x="32" y="163" font-family="monospace" font-size="20" fill="#f2cc60">=== PRUEBA 2: sp_reporte_ventas_por_funcion ===</text>
+<text x="32" y="194" font-family="monospace" font-size="20" fill="#e6edf3">CALL sp_reporte_ventas_por_funcion(DATE '2026-10-16', DATE '2026-10-18', ...)</text>
+<text x="32" y="225" font-family="monospace" font-size="20" fill="#e6edf3"> </text>
+<text x="32" y="256" font-family="monospace" font-size="20" fill="#e6edf3"> id_funcion | titulo                  | fecha      | recaudo</text>
+<text x="32" y="287" font-family="monospace" font-size="20" fill="#e6edf3">------------+-------------------------+------------+----------</text>
+<text x="32" y="318" font-family="monospace" font-size="20" fill="#e6edf3">          1 | La ciudad de los sueños | 2026-10-16 | 36000.00</text>
+<text x="32" y="349" font-family="monospace" font-size="20" fill="#e6edf3">          5 | La casa del bosque      | 2026-10-16 | 18000.00</text>
+<text x="32" y="380" font-family="monospace" font-size="20" fill="#e6edf3">          9 | Sombras de medianoche   | 2026-10-16 | 18000.00</text>
+<text x="32" y="411" font-family="monospace" font-size="20" fill="#e6edf3">         13 | El último viaje         | 2026-10-17 | 18000.00</text>
+<text x="32" y="442" font-family="monospace" font-size="20" fill="#e6edf3">         17 | Amigos para siempre    | 2026-10-17 | 18000.00</text>
+<text x="32" y="473" font-family="monospace" font-size="20" fill="#e6edf3">         21 | La ciudad de los sueños | 2026-10-18 | 18000.00</text>
+<text x="32" y="504" font-family="monospace" font-size="20" fill="#e6edf3">...</text>
+<text x="32" y="535" font-family="monospace" font-size="20" fill="#e6edf3">(30 rows)</text>
+<text x="32" y="566" font-family="monospace" font-size="20" fill="#e6edf3"> </text>
+<text x="32" y="597" font-family="monospace" font-size="20" fill="#7ee787">Resultado: cursor del reporte consultado; 30 filas devueltas.</text>
+</svg>
