@@ -1,6 +1,6 @@
 # Proyecto integrador — Avance 1
 
-Repositorio del grupo de cuatro para el núcleo transaccional en PostgreSQL. Contiene la identidad de Cine Umbral, su logotipo y los diagramas ER y relacional 3FN con fuentes editables de draw.io.
+Repositorio del grupo de cuatro para el núcleo transaccional en PostgreSQL. Contiene la identidad de Cine Bogotá, su logotipo y los diagramas ER y relacional 3FN con fuentes editables de draw.io.
 
 ## Estructura
 
