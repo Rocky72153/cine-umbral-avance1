@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="553" viewBox="0 0 1400 553">
+<rect width="1400" height="553" rx="18" fill="#10151d"/>
+<path d="M18 0 H1382 Q1400 0 1400 18 V58 H0 V18 Q0 0 18 0" fill="#252d39"/>
+<circle cx="30" cy="29" r="7" fill="#ff6259"/><circle cx="54" cy="29" r="7" fill="#ffc04d"/><circle cx="78" cy="29" r="7" fill="#35c96b"/>
+<text x="105" y="36" font-family="Arial,sans-serif" font-size="19" fill="#e7edf5">PostgreSQL · GitHub Actions · ejecución real</text>
+<text x="28" y="91" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#8ecbff">Evidencia 3 · sp_actualizar_estado_sala</text>
+<text x="32" y="132" font-family="monospace" font-size="20" fill="#e6edf3">$ psql -d cine_bogota -f evidencias/pruebas_procedimientos.sql</text>
+<text x="32" y="163" font-family="monospace" font-size="20" fill="#f2cc60">=== PRUEBA 3: sp_actualizar_estado_sala ===</text>
+<text x="32" y="194" font-family="monospace" font-size="20" fill="#e6edf3">NOTICE: Se actualizó el estado de la sala 1.</text>
+<text x="32" y="225" font-family="monospace" font-size="20" fill="#e6edf3"> </text>
+<text x="32" y="256" font-family="monospace" font-size="20" fill="#e6edf3">CALL</text>
+<text x="32" y="287" font-family="monospace" font-size="20" fill="#e6edf3"> </text>
+<text x="32" y="318" font-family="monospace" font-size="20" fill="#e6edf3"> id_sala | estado_actual</text>
+<text x="32" y="349" font-family="monospace" font-size="20" fill="#e6edf3">---------+---------------</text>
+<text x="32" y="380" font-family="monospace" font-size="20" fill="#e6edf3">       1 | Mantenimiento</text>
+<text x="32" y="411" font-family="monospace" font-size="20" fill="#e6edf3">(1 row)</text>
+<text x="32" y="442" font-family="monospace" font-size="20" fill="#e6edf3"> </text>
+<text x="32" y="473" font-family="monospace" font-size="20" fill="#f2cc60">=== FIN: las tres llamadas terminaron sin error ===</text>
+<text x="32" y="504" font-family="monospace" font-size="20" fill="#7ee787">Resultado: CALL ejecutado sin error.</text>
+</svg>
